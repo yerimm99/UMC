@@ -6,22 +6,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-public class TempResponse {
-
+public class MemberResponse {
     @Builder
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class TempTestDTO{
-        String testString;
+    public static class JoinResultDTO{
+        Long memberId;
+        LocalDateTime createdAt;
     }
-
-    @Builder
-    @Getter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class TempExceptionDTO{
-        Integer flag;
-    }
-
 }
