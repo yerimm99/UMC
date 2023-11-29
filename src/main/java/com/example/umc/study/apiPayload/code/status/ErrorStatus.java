@@ -28,6 +28,8 @@ public enum ErrorStatus implements BaseErrorCode {
     // FoodCategory Error
     STORE_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4001", "가게가 없습니다."),
 
+    MISSION_CHALLENGING(HttpStatus.NOT_FOUND, "MISSION4001", "이미 진행중입니다."),
+
     // FoodCategory Error
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD_CATEGORY4001", "음식 카테고리가 없습니다.");
 

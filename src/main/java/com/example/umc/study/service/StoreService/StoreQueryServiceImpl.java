@@ -1,6 +1,8 @@
 package com.example.umc.study.service.StoreService;
 
+import com.example.umc.study.domain.Mission;
 import com.example.umc.study.domain.Store;
+import com.example.umc.study.repository.MissionRepository;
 import com.example.umc.study.repository.StoreRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -14,8 +16,15 @@ public class StoreQueryServiceImpl implements StoreQueryService{
 
     private final StoreRepository storeRepository;
 
+    private final MissionRepository missionRepository;
+
     @Override
     public Optional<Store> findStore(Long id) {
         return storeRepository.findById(id);
+    }
+
+    @Override
+    public Optional<Mission> findMission(Long id) {
+        return missionRepository.findById(id);
     }
 }
