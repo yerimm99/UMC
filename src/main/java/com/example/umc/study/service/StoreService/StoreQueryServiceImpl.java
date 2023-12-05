@@ -42,6 +42,15 @@ public class StoreQueryServiceImpl implements StoreQueryService{
     }
 
     @Override
+    public Page<Review> getMemberReviewList(Long MemberId, Integer page) {
+
+        Member member = memberRepository.findById(MemberId).get();
+
+        Page<Review> MemberPage = reviewRepository.findAllByMember(member, PageRequest.of(page, 10));
+        return MemberPage;
+    }
+
+    @Override
     public Page<Mission> getMissionList(Long StoreId, Integer page) {
 
         Store store = storeRepository.findById(StoreId).get();
