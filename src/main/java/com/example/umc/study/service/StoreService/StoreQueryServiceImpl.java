@@ -36,6 +36,15 @@ public class StoreQueryServiceImpl implements StoreQueryService{
         Page<Review> StorePage = reviewRepository.findAllByStore(store, PageRequest.of(page, 10));
         return StorePage;
     }
+
+    @Override
+    public Page<Mission> getMissionList(Long StoreId, Integer page) {
+
+        Store store = storeRepository.findById(StoreId).get();
+
+        Page<Mission> StorePage = missionRepository.findAllByStore(store, PageRequest.of(page, 10));
+        return StorePage;
+    }
     @Override
     public Optional<Mission> findMission(Long id) {
         return missionRepository.findById(id);
